@@ -169,7 +169,7 @@
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
             this.tableLayoutPanelConnections.RowCount = 1;
-            this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelConnections.Size = new System.Drawing.Size(389, 351);
             this.tableLayoutPanelConnections.TabIndex = 8;
             // 

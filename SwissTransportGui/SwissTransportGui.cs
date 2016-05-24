@@ -13,6 +13,7 @@ namespace SwissTransportGui
 {
     public partial class SwissTransportGui : Form
     {
+        ITransport transport;
         public SwissTransportGui()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace SwissTransportGui
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            transport = new Transport();
             //ITransport testee = new Transport();
             //var connections = testee.GetConnections("Sursee", "Luzern");
 
@@ -28,7 +30,14 @@ namespace SwissTransportGui
 
         private void buttonSearchConnections_Click(object sender, EventArgs e)
         {
+            /*
+            String start = textBoxFrom.Text;
+            String destination = textBoxTo.Text;
 
+            Connection connectionPoint = transport.GetConnections(start, destination).ConnectionList[0];
+
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = connectionPoint.Duration }, 0, 0);
+            */
         }
     }
 }
