@@ -72,7 +72,7 @@
             this.ClientSize = new System.Drawing.Size(452, 290);
             this.Controls.Add(this.tabControl1);
             this.Name = "SwissTransportGui";
-            this.Text = "Form1";
+            this.Text = "SwissTransport";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
