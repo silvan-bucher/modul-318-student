@@ -40,6 +40,8 @@
             this.labelTime = new System.Windows.Forms.Label();
             this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
+            this.tableLayoutPanelConnections = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSearchConnections = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +59,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.buttonSearchConnections);
+            this.tabPage1.Controls.Add(this.tableLayoutPanelConnections);
             this.tabPage1.Controls.Add(this.dateTimePickerTime);
             this.tabPage1.Controls.Add(this.dateTimePickerDate);
             this.tabPage1.Controls.Add(this.labelTime);
@@ -156,6 +160,29 @@
             this.dateTimePickerTime.Size = new System.Drawing.Size(140, 20);
             this.dateTimePickerTime.TabIndex = 7;
             // 
+            // tableLayoutPanelConnections
+            // 
+            this.tableLayoutPanelConnections.ColumnCount = 3;
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 34.96144F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 141F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
+            this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
+            this.tableLayoutPanelConnections.RowCount = 1;
+            this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelConnections.Size = new System.Drawing.Size(389, 351);
+            this.tableLayoutPanelConnections.TabIndex = 8;
+            // 
+            // buttonSearchConnections
+            // 
+            this.buttonSearchConnections.Location = new System.Drawing.Point(11, 85);
+            this.buttonSearchConnections.Name = "buttonSearchConnections";
+            this.buttonSearchConnections.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearchConnections.TabIndex = 9;
+            this.buttonSearchConnections.Text = "Suchen";
+            this.buttonSearchConnections.UseVisualStyleBackColor = true;
+            this.buttonSearchConnections.Click += new System.EventHandler(this.buttonSearchConnections_Click);
+            // 
             // SwissTransportGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +213,8 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.DateTimePicker dateTimePickerDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelConnections;
+        private System.Windows.Forms.Button buttonSearchConnections;
     }
 }
 

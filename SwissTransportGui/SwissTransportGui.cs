@@ -25,5 +25,10 @@ namespace SwissTransportGui
 
             //label1.Text = connections.ConnectionList[0].To.Station.Name;
         }
+
+        private void buttonSearchConnections_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
