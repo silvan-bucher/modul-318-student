@@ -61,10 +61,10 @@ namespace SwissTransportGui
                 String platform = connection.From.Platform;
 
                 //Adding values to table
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = departureText }, 0, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = arrivalText }, 1, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = durationText }, 2, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = platform }, 3, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = departureText, AutoSize = false, TextAlign = ContentAlignment.MiddleCenter,  Dock = DockStyle.None, Width = 90 }, 0, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = arrivalText, AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 1, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = durationText, AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 2, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = platform, AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 3, row);
 
                 row++;
             }
@@ -73,10 +73,10 @@ namespace SwissTransportGui
         private void resetTable()
         {
             tableLayoutPanelConnections.Controls.Clear();
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt" }, 0, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft" }, 1, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer" }, 2, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis" }, 3, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 0, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 1, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 2, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90}, 3, 0);
         }
 
         private AutoCompleteStringCollection searchStation(String query)
@@ -130,6 +130,17 @@ namespace SwissTransportGui
                 textBoxTo.AutoCompleteCustomSource = autocompleteList;
                 textBoxTo.AutoCompleteMode = AutoCompleteMode.Suggest;
                 textBoxTo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+        }
+
+        private void textBoxStation_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxStation.Text.Length > 2)
+            {
+                AutoCompleteStringCollection autocompleteList = searchStation(textBoxStation.Text);
+                textBoxStation.AutoCompleteCustomSource = autocompleteList;
+                textBoxStation.AutoCompleteMode = AutoCompleteMode.Suggest;
+                textBoxStation.AutoCompleteSource = AutoCompleteSource.CustomSource;
             }
         }
     }

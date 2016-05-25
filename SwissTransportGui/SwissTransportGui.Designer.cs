@@ -38,8 +38,13 @@
             this.labelFrom = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.labelStation = new System.Windows.Forms.Label();
+            this.textBoxStation = new System.Windows.Forms.TextBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.tableLayoutPanelDepartures = new System.Windows.Forms.TableLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -71,7 +76,7 @@
             // 
             // buttonSearchConnections
             // 
-            this.buttonSearchConnections.Location = new System.Drawing.Point(11, 85);
+            this.buttonSearchConnections.Location = new System.Drawing.Point(11, 83);
             this.buttonSearchConnections.Name = "buttonSearchConnections";
             this.buttonSearchConnections.Size = new System.Drawing.Size(389, 23);
             this.buttonSearchConnections.TabIndex = 9;
@@ -83,10 +88,10 @@
             // 
             this.tableLayoutPanelConnections.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelConnections.ColumnCount = 4;
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 93F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -133,6 +138,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.tableLayoutPanelDepartures);
+            this.tabPage2.Controls.Add(this.buttonSearch);
+            this.tabPage2.Controls.Add(this.textBoxStation);
+            this.tabPage2.Controls.Add(this.labelStation);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -144,6 +153,46 @@
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
+            // 
+            // labelStation
+            // 
+            this.labelStation.AutoSize = true;
+            this.labelStation.Location = new System.Drawing.Point(8, 14);
+            this.labelStation.Name = "labelStation";
+            this.labelStation.Size = new System.Drawing.Size(40, 13);
+            this.labelStation.TabIndex = 0;
+            this.labelStation.Text = "Station";
+            // 
+            // textBoxStation
+            // 
+            this.textBoxStation.Location = new System.Drawing.Point(54, 11);
+            this.textBoxStation.Name = "textBoxStation";
+            this.textBoxStation.Size = new System.Drawing.Size(346, 20);
+            this.textBoxStation.TabIndex = 1;
+            this.textBoxStation.TextChanged += new System.EventHandler(this.textBoxStation_TextChanged);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(11, 46);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.Text = "Suchen";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanelDepartures
+            // 
+            this.tableLayoutPanelDepartures.ColumnCount = 3;
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
+            this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
+            this.tableLayoutPanelDepartures.RowCount = 2;
+            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(389, 158);
+            this.tableLayoutPanelDepartures.TabIndex = 3;
             // 
             // SwissTransportGui
             // 
@@ -157,6 +206,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -173,6 +224,10 @@
         private System.Windows.Forms.PrintDialog printDialog1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelConnections;
         private System.Windows.Forms.Button buttonSearchConnections;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.TextBox textBoxStation;
+        private System.Windows.Forms.Label labelStation;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelDepartures;
     }
 }
 
