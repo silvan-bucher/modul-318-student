@@ -84,7 +84,6 @@ namespace SwissTransportGui
             List<Station> stations = transport.GetStations(query).StationList;
             AutoCompleteStringCollection autocompleteList = new AutoCompleteStringCollection();
             foreach (Station station in stations){
-                Console.WriteLine(station.Name);
                 autocompleteList.Add(station.Name);
             }
             return autocompleteList;
