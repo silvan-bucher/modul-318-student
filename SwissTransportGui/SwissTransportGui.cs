@@ -25,10 +25,6 @@ namespace SwissTransportGui
         {
             transport = new Transport();
             dateFormatHelper = new DateFormatHelper();
-            //ITransport testee = new Transport();
-            //var connections = testee.GetConnections("Sursee", "Luzern");
-
-            //label1.Text = connections.ConnectionList[0].To.Station.Name;
         }
 
         private void buttonSearchConnections_Click(object sender, EventArgs e)
