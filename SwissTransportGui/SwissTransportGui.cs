@@ -29,6 +29,11 @@ namespace SwissTransportGui
 
         private void buttonSearchConnections_Click(object sender, EventArgs e)
         {
+            searchConnections();
+        }
+
+        private void searchConnections()
+        {
             String start = textBoxFrom.Text;
             String destination = textBoxTo.Text;
 
@@ -64,6 +69,7 @@ namespace SwissTransportGui
                 row++;
             }
         }
+
         private void resetTable()
         {
             tableLayoutPanelConnections.Controls.Clear();
@@ -71,6 +77,61 @@ namespace SwissTransportGui
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft" }, 1, 0);
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer" }, 2, 0);
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis" }, 3, 0);
+        }
+
+        private AutoCompleteStringCollection searchStation(String query)
+        {
+            List<Station> stations = transport.GetStations(query).StationList;
+            AutoCompleteStringCollection autocompleteList = new AutoCompleteStringCollection();
+            foreach (Station station in stations){
+                Console.WriteLine(station.Name);
+                autocompleteList.Add(station.Name);
+            }
+            return autocompleteList;
+        }
+
+        private void textBoxFrom_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchConnections();
+            }
+        }
+
+        private void textBoxTo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                searchConnections();
+            }
+        }
+
+        private void buttonSearchFrom_Click(object sender, EventArgs e)
+        {
+            AutoCompleteStringCollection autocompleteList = searchStation(textBoxFrom.Text);
+            textBoxFrom.AutoCompleteCustomSource = autocompleteList;
+        }
+
+        private void textBoxFrom_TextChanged(object sender, EventArgs e)
+        {
+            if(textBoxFrom.Text.Length > 2)
+            {
+                AutoCompleteStringCollection autocompleteList = searchStation(textBoxFrom.Text);
+                textBoxFrom.AutoCompleteCustomSource = autocompleteList;
+                textBoxFrom.AutoCompleteMode = AutoCompleteMode.Suggest;
+                textBoxFrom.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+        }
+
+        private void textBoxTo_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxTo.Text.Length > 2)
+            {
+                AutoCompleteStringCollection autocompleteList = searchStation(textBoxTo.Text);
+                textBoxTo.AutoCompleteCustomSource = autocompleteList;
+                textBoxTo.AutoCompleteMode = AutoCompleteMode.Suggest;
+                textBoxTo.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
         }
     }
 }
