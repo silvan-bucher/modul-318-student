@@ -18,6 +18,7 @@ namespace SwissTransportGui
         public SwissTransportGui()
         {
             InitializeComponent();
+            resetTable();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,28 +38,43 @@ namespace SwissTransportGui
 
             //Searching connection
             List<Connection> connections = transport.GetConnections(start, destination).ConnectionList;
-            int row = 0;
+
+            resetTable();
+
+            int row = 1;
             foreach (Connection connection in connections)
             {
                 //Duration
                 DateTime duration = dateFormatHelper.convertDuration(connection.Duration);
-                String durationText = Convert.ToString(duration.Hour) + ":" + Convert.ToString(duration.Minute);
+                String durationText = dateFormatHelper.convertIntToTimeString(duration.Hour) + ":" + dateFormatHelper.convertIntToTimeString(duration.Minute);
 
                 //Departure
                 DateTime departure = Convert.ToDateTime(connection.From.Departure.ToString());
-                String departureText = Convert.ToString(departure.Hour + ":" + departure.Minute);
+                String departureText = dateFormatHelper.convertIntToTimeString(departure.Hour) + ":" + dateFormatHelper.convertIntToTimeString(departure.Minute);
 
                 //Arrival
                 DateTime arrival = Convert.ToDateTime(connection.To.Arrival.ToString());
-                String arrivalText = Convert.ToString(arrival.Hour + ":" + arrival.Minute);
+                String arrivalText = dateFormatHelper.convertIntToTimeString(arrival.Hour) + ":" + dateFormatHelper.convertIntToTimeString(arrival.Minute);
+
+                //Platform
+                String platform = connection.From.Platform;
 
                 //Adding values to table
                 tableLayoutPanelConnections.Controls.Add(new Label() { Text = departureText }, 0, row);
                 tableLayoutPanelConnections.Controls.Add(new Label() { Text = arrivalText }, 1, row);
                 tableLayoutPanelConnections.Controls.Add(new Label() { Text = durationText }, 2, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = platform }, 3, row);
 
                 row++;
             }
+        }
+        private void resetTable()
+        {
+            tableLayoutPanelConnections.Controls.Clear();
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt" }, 0, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft" }, 1, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer" }, 2, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis" }, 3, 0);
         }
     }
 }

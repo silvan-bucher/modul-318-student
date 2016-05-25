@@ -27,5 +27,16 @@ namespace SwissTransportGui
             //Console.WriteLine(datetime);
             return datetime;
         }
+
+        public String convertIntToTimeString(int time)
+        {
+            if(time < 10)
+            {
+                return "0" + time.ToString();
+            } else
+            {
+                return time.ToString();
+            }
+        }
     }
 }
