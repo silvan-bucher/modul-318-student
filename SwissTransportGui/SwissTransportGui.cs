@@ -1,4 +1,7 @@
-﻿using SwissTransport;
+﻿using GMap.NET;
+using GMap.NET.WindowsForms;
+using GMap.NET.WindowsForms.Markers;
+using SwissTransport;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,11 +18,18 @@ namespace SwissTransportGui
     {
         ITransport transport;
         DateFormatHelper dateFormatHelper;
+        GMapOverlay markersOverlay = new GMapOverlay("markers");
+        GMarkerGoogle stationMarker;
         public SwissTransportGui()
         {
             InitializeComponent();
             resetConnectionTable();
             resetDepartureTable();
+            map.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            map.Overlays.Add(markersOverlay);
+            map.ShowCenter = false;
+            map.Position = new PointLatLng(46.7976691, 8.2275602);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -195,6 +205,28 @@ namespace SwissTransportGui
             tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 0, 0);
             tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Ziel", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 1, 0);
             tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Typ", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 2, 0);
+        }
+
+        private void buttonSearchStation_Click(object sender, EventArgs e)
+        {
+            String stationName = textBoxStationSearch.Text;
+            Console.WriteLine(stationName);
+
+            List<Station> stations = transport.GetStations(stationName).StationList;
+            if (stations.Count < 1)
+            {
+                Console.WriteLine("return");
+                return;
+            }
+            Console.WriteLine("abc");
+            Station station = stations[0];
+
+            map.Zoom = 15;
+            map.Position = new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate);
+            markersOverlay.Markers.Remove(stationMarker);
+            stationMarker = new GMarkerGoogle(new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate),
+            GMarkerGoogleType.red);
+            markersOverlay.Markers.Add(stationMarker);
         }
     }
 }

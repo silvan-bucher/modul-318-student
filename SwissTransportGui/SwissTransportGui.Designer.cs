@@ -30,32 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SwissTransportGui));
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPageConnections = new System.Windows.Forms.TabPage();
+            this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.labelDate = new System.Windows.Forms.Label();
             this.buttonSearchConnections = new System.Windows.Forms.Button();
             this.tableLayoutPanelConnections = new System.Windows.Forms.TableLayoutPanel();
             this.textBoxTo = new System.Windows.Forms.TextBox();
             this.labelTo = new System.Windows.Forms.Label();
             this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.labelFrom = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPageDepartures = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelDepartures = new System.Windows.Forms.TableLayoutPanel();
             this.buttonSearch = new System.Windows.Forms.Button();
             this.textBoxStation = new System.Windows.Forms.TextBox();
             this.labelStation = new System.Windows.Forms.Label();
+            this.tabPageMap = new System.Windows.Forms.TabPage();
+            this.buttonSearchStation = new System.Windows.Forms.Button();
+            this.textBoxStationSearch = new System.Windows.Forms.TextBox();
+            this.labelSearch = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.labelDate = new System.Windows.Forms.Label();
-            this.labelTime = new System.Windows.Forms.Label();
-            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
+            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
+            this.tabPageConnections.SuspendLayout();
+            this.tabPageDepartures.SuspendLayout();
+            this.tabPageMap.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPageConnections);
+            this.tabControl1.Controls.Add(this.tabPageDepartures);
+            this.tabControl1.Controls.Add(this.tabPageMap);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -63,25 +70,60 @@
             this.tabControl1.Size = new System.Drawing.Size(416, 279);
             this.tabControl1.TabIndex = 0;
             // 
-            // tabPage1
+            // tabPageConnections
             // 
-            this.tabPage1.Controls.Add(this.dateTimePickerTime);
-            this.tabPage1.Controls.Add(this.dateTimePickerDate);
-            this.tabPage1.Controls.Add(this.labelTime);
-            this.tabPage1.Controls.Add(this.labelDate);
-            this.tabPage1.Controls.Add(this.buttonSearchConnections);
-            this.tabPage1.Controls.Add(this.tableLayoutPanelConnections);
-            this.tabPage1.Controls.Add(this.textBoxTo);
-            this.tabPage1.Controls.Add(this.labelTo);
-            this.tabPage1.Controls.Add(this.textBoxFrom);
-            this.tabPage1.Controls.Add(this.labelFrom);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(408, 253);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Verbindungen";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPageConnections.Controls.Add(this.dateTimePickerTime);
+            this.tabPageConnections.Controls.Add(this.dateTimePickerDate);
+            this.tabPageConnections.Controls.Add(this.labelTime);
+            this.tabPageConnections.Controls.Add(this.labelDate);
+            this.tabPageConnections.Controls.Add(this.buttonSearchConnections);
+            this.tabPageConnections.Controls.Add(this.tableLayoutPanelConnections);
+            this.tabPageConnections.Controls.Add(this.textBoxTo);
+            this.tabPageConnections.Controls.Add(this.labelTo);
+            this.tabPageConnections.Controls.Add(this.textBoxFrom);
+            this.tabPageConnections.Controls.Add(this.labelFrom);
+            this.tabPageConnections.Location = new System.Drawing.Point(4, 22);
+            this.tabPageConnections.Name = "tabPageConnections";
+            this.tabPageConnections.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageConnections.Size = new System.Drawing.Size(408, 253);
+            this.tabPageConnections.TabIndex = 0;
+            this.tabPageConnections.Text = "Verbindungen";
+            this.tabPageConnections.UseVisualStyleBackColor = true;
+            // 
+            // dateTimePickerTime
+            // 
+            this.dateTimePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerTime.Location = new System.Drawing.Point(246, 47);
+            this.dateTimePickerTime.Name = "dateTimePickerTime";
+            this.dateTimePickerTime.ShowUpDown = true;
+            this.dateTimePickerTime.Size = new System.Drawing.Size(153, 20);
+            this.dateTimePickerTime.TabIndex = 13;
+            // 
+            // dateTimePickerDate
+            // 
+            this.dateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDate.Location = new System.Drawing.Point(247, 11);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(153, 20);
+            this.dateTimePickerDate.TabIndex = 12;
+            // 
+            // labelTime
+            // 
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(203, 49);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(25, 13);
+            this.labelTime.TabIndex = 11;
+            this.labelTime.Text = "Zeit";
+            // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(203, 14);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(38, 13);
+            this.labelDate.TabIndex = 10;
+            this.labelDate.Text = "Datum";
             // 
             // buttonSearchConnections
             // 
@@ -100,7 +142,7 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -143,19 +185,19 @@
             this.labelFrom.TabIndex = 0;
             this.labelFrom.Text = "Von";
             // 
-            // tabPage2
+            // tabPageDepartures
             // 
-            this.tabPage2.Controls.Add(this.tableLayoutPanelDepartures);
-            this.tabPage2.Controls.Add(this.buttonSearch);
-            this.tabPage2.Controls.Add(this.textBoxStation);
-            this.tabPage2.Controls.Add(this.labelStation);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(408, 253);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Abfahrtsplan";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPageDepartures.Controls.Add(this.tableLayoutPanelDepartures);
+            this.tabPageDepartures.Controls.Add(this.buttonSearch);
+            this.tabPageDepartures.Controls.Add(this.textBoxStation);
+            this.tabPageDepartures.Controls.Add(this.labelStation);
+            this.tabPageDepartures.Location = new System.Drawing.Point(4, 22);
+            this.tabPageDepartures.Name = "tabPageDepartures";
+            this.tabPageDepartures.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageDepartures.Size = new System.Drawing.Size(408, 253);
+            this.tabPageDepartures.TabIndex = 1;
+            this.tabPageDepartures.Text = "Abfahrtsplan";
+            this.tabPageDepartures.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelDepartures
             // 
@@ -164,7 +206,7 @@
             this.tableLayoutPanelDepartures.ColumnCount = 3;
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
             this.tableLayoutPanelDepartures.RowCount = 1;
@@ -199,44 +241,74 @@
             this.labelStation.TabIndex = 0;
             this.labelStation.Text = "Station";
             // 
+            // tabPageMap
+            // 
+            this.tabPageMap.Controls.Add(this.map);
+            this.tabPageMap.Controls.Add(this.buttonSearchStation);
+            this.tabPageMap.Controls.Add(this.textBoxStationSearch);
+            this.tabPageMap.Controls.Add(this.labelSearch);
+            this.tabPageMap.Location = new System.Drawing.Point(4, 22);
+            this.tabPageMap.Name = "tabPageMap";
+            this.tabPageMap.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageMap.Size = new System.Drawing.Size(408, 253);
+            this.tabPageMap.TabIndex = 2;
+            this.tabPageMap.Text = "Karte";
+            this.tabPageMap.UseVisualStyleBackColor = true;
+            // 
+            // buttonSearchStation
+            // 
+            this.buttonSearchStation.Location = new System.Drawing.Point(11, 47);
+            this.buttonSearchStation.Name = "buttonSearchStation";
+            this.buttonSearchStation.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearchStation.TabIndex = 2;
+            this.buttonSearchStation.Text = "Suchen";
+            this.buttonSearchStation.UseVisualStyleBackColor = true;
+            this.buttonSearchStation.Click += new System.EventHandler(this.buttonSearchStation_Click);
+            // 
+            // textBoxStationSearch
+            // 
+            this.textBoxStationSearch.Location = new System.Drawing.Point(52, 12);
+            this.textBoxStationSearch.Name = "textBoxStationSearch";
+            this.textBoxStationSearch.Size = new System.Drawing.Size(348, 20);
+            this.textBoxStationSearch.TabIndex = 1;
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(8, 15);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(40, 13);
+            this.labelSearch.TabIndex = 0;
+            this.labelSearch.Text = "Station";
+            // 
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // labelDate
+            // map
             // 
-            this.labelDate.AutoSize = true;
-            this.labelDate.Location = new System.Drawing.Point(203, 14);
-            this.labelDate.Name = "labelDate";
-            this.labelDate.Size = new System.Drawing.Size(38, 13);
-            this.labelDate.TabIndex = 10;
-            this.labelDate.Text = "Datum";
-            // 
-            // labelTime
-            // 
-            this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(203, 49);
-            this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(25, 13);
-            this.labelTime.TabIndex = 11;
-            this.labelTime.Text = "Zeit";
-            // 
-            // dateTimePickerDate
-            // 
-            this.dateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerDate.Location = new System.Drawing.Point(247, 11);
-            this.dateTimePickerDate.Name = "dateTimePickerDate";
-            this.dateTimePickerDate.Size = new System.Drawing.Size(153, 20);
-            this.dateTimePickerDate.TabIndex = 12;
-            // 
-            // dateTimePickerTime
-            // 
-            this.dateTimePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.dateTimePickerTime.Location = new System.Drawing.Point(246, 47);
-            this.dateTimePickerTime.Name = "dateTimePickerTime";
-            this.dateTimePickerTime.ShowUpDown = true;
-            this.dateTimePickerTime.Size = new System.Drawing.Size(153, 20);
-            this.dateTimePickerTime.TabIndex = 13;
+            this.map.Bearing = 0F;
+            this.map.CanDragMap = true;
+            this.map.EmptyTileColor = System.Drawing.Color.Navy;
+            this.map.GrayScaleMode = false;
+            this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
+            this.map.LevelsKeepInMemmory = 5;
+            this.map.Location = new System.Drawing.Point(11, 88);
+            this.map.MarkersEnabled = true;
+            this.map.MaxZoom = 100;
+            this.map.MinZoom = 2;
+            this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
+            this.map.Name = "map";
+            this.map.NegativeMode = false;
+            this.map.PolygonsEnabled = true;
+            this.map.RetryLoadTile = 0;
+            this.map.RoutesEnabled = true;
+            this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
+            this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
+            this.map.ShowTileGridLines = false;
+            this.map.Size = new System.Drawing.Size(389, 157);
+            this.map.TabIndex = 3;
+            this.map.Zoom = 6D;
             // 
             // SwissTransportGui
             // 
@@ -251,10 +323,12 @@
             this.Text = "SwissTransport";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
+            this.tabPageConnections.ResumeLayout(false);
+            this.tabPageConnections.PerformLayout();
+            this.tabPageDepartures.ResumeLayout(false);
+            this.tabPageDepartures.PerformLayout();
+            this.tabPageMap.ResumeLayout(false);
+            this.tabPageMap.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -262,8 +336,8 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPageConnections;
+        private System.Windows.Forms.TabPage tabPageDepartures;
         private System.Windows.Forms.TextBox textBoxFrom;
         private System.Windows.Forms.Label labelFrom;
         private System.Windows.Forms.TextBox textBoxTo;
@@ -279,6 +353,11 @@
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Label labelDate;
         private System.Windows.Forms.DateTimePicker dateTimePickerTime;
+        private System.Windows.Forms.TabPage tabPageMap;
+        private System.Windows.Forms.TextBox textBoxStationSearch;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.Button buttonSearchStation;
+        private GMap.NET.WindowsForms.GMapControl map;
     }
 }
 
