@@ -52,9 +52,12 @@ namespace SwissTransportGui
             //Getting start and destination String
             String start = textBoxFrom.Text;
             String destination = textBoxTo.Text;
+            DateTime date = dateTimePickerDate.Value;
+            DateTime time = dateTimePickerTime.Value;
+            DateTime dateTime = new DateTime(date.Year, date.Month, date.Day, time.Hour, time.Minute, 0);
 
             //Searching connection
-            List<Connection> connections = transport.GetConnections(start, destination).ConnectionList;
+            List<Connection> connections = transport.GetConnections(start, destination, dateTime).ConnectionList;
 
             //Filling up the table with our results
             fillConnectionTable(connections);

@@ -43,6 +43,10 @@
             this.textBoxStation = new System.Windows.Forms.TextBox();
             this.labelStation = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.labelDate = new System.Windows.Forms.Label();
+            this.labelTime = new System.Windows.Forms.Label();
+            this.dateTimePickerDate = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTime = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -61,6 +65,10 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dateTimePickerTime);
+            this.tabPage1.Controls.Add(this.dateTimePickerDate);
+            this.tabPage1.Controls.Add(this.labelTime);
+            this.tabPage1.Controls.Add(this.labelDate);
             this.tabPage1.Controls.Add(this.buttonSearchConnections);
             this.tabPage1.Controls.Add(this.tableLayoutPanelConnections);
             this.tabPage1.Controls.Add(this.textBoxTo);
@@ -92,7 +100,7 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 106F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -105,7 +113,7 @@
             // 
             this.textBoxTo.Location = new System.Drawing.Point(47, 46);
             this.textBoxTo.Name = "textBoxTo";
-            this.textBoxTo.Size = new System.Drawing.Size(353, 20);
+            this.textBoxTo.Size = new System.Drawing.Size(150, 20);
             this.textBoxTo.TabIndex = 3;
             this.textBoxTo.TextChanged += new System.EventHandler(this.textBoxTo_TextChanged);
             // 
@@ -122,7 +130,7 @@
             // 
             this.textBoxFrom.Location = new System.Drawing.Point(47, 11);
             this.textBoxFrom.Name = "textBoxFrom";
-            this.textBoxFrom.Size = new System.Drawing.Size(353, 20);
+            this.textBoxFrom.Size = new System.Drawing.Size(150, 20);
             this.textBoxFrom.TabIndex = 1;
             this.textBoxFrom.TextChanged += new System.EventHandler(this.textBoxFrom_TextChanged);
             // 
@@ -156,7 +164,7 @@
             this.tableLayoutPanelDepartures.ColumnCount = 3;
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 128F));
             this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
             this.tableLayoutPanelDepartures.RowCount = 1;
@@ -195,6 +203,41 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // labelDate
+            // 
+            this.labelDate.AutoSize = true;
+            this.labelDate.Location = new System.Drawing.Point(203, 14);
+            this.labelDate.Name = "labelDate";
+            this.labelDate.Size = new System.Drawing.Size(38, 13);
+            this.labelDate.TabIndex = 10;
+            this.labelDate.Text = "Datum";
+            // 
+            // labelTime
+            // 
+            this.labelTime.AutoSize = true;
+            this.labelTime.Location = new System.Drawing.Point(203, 49);
+            this.labelTime.Name = "labelTime";
+            this.labelTime.Size = new System.Drawing.Size(25, 13);
+            this.labelTime.TabIndex = 11;
+            this.labelTime.Text = "Zeit";
+            // 
+            // dateTimePickerDate
+            // 
+            this.dateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerDate.Location = new System.Drawing.Point(247, 11);
+            this.dateTimePickerDate.Name = "dateTimePickerDate";
+            this.dateTimePickerDate.Size = new System.Drawing.Size(153, 20);
+            this.dateTimePickerDate.TabIndex = 12;
+            // 
+            // dateTimePickerTime
+            // 
+            this.dateTimePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.dateTimePickerTime.Location = new System.Drawing.Point(246, 47);
+            this.dateTimePickerTime.Name = "dateTimePickerTime";
+            this.dateTimePickerTime.ShowUpDown = true;
+            this.dateTimePickerTime.Size = new System.Drawing.Size(153, 20);
+            this.dateTimePickerTime.TabIndex = 13;
+            // 
             // SwissTransportGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,6 +275,10 @@
         private System.Windows.Forms.TextBox textBoxStation;
         private System.Windows.Forms.Label labelStation;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelDepartures;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDate;
+        private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Label labelDate;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTime;
     }
 }
 

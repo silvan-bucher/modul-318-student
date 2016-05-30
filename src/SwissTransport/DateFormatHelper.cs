@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SwissTransportGui
+namespace SwissTransport
 {
-    class DateFormatHelper
+    public class DateFormatHelper
     {
         public DateTime convertDuration(String duration)
         {
