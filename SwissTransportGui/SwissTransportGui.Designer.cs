@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SwissTransportGui));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonSearchConnections = new System.Windows.Forms.Button();
@@ -91,7 +92,7 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -107,7 +108,6 @@
             this.textBoxTo.Size = new System.Drawing.Size(353, 20);
             this.textBoxTo.TabIndex = 3;
             this.textBoxTo.TextChanged += new System.EventHandler(this.textBoxTo_TextChanged);
-            this.textBoxTo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTo_KeyPress);
             // 
             // labelTo
             // 
@@ -125,7 +125,6 @@
             this.textBoxFrom.Size = new System.Drawing.Size(353, 20);
             this.textBoxFrom.TabIndex = 1;
             this.textBoxFrom.TextChanged += new System.EventHandler(this.textBoxFrom_TextChanged);
-            this.textBoxFrom.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFrom_KeyPress);
             // 
             // labelFrom
             // 
@@ -157,7 +156,7 @@
             this.tableLayoutPanelDepartures.ColumnCount = 3;
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 127F));
             this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
             this.tableLayoutPanelDepartures.RowCount = 1;
@@ -173,7 +172,7 @@
             this.buttonSearch.TabIndex = 2;
             this.buttonSearch.Text = "Suchen";
             this.buttonSearch.UseVisualStyleBackColor = true;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearchDepartures_Click);
             // 
             // textBoxStation
             // 
@@ -202,6 +201,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 279);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "SwissTransportGui";
             this.Text = "SwissTransport";
             this.Load += new System.EventHandler(this.Form1_Load);
