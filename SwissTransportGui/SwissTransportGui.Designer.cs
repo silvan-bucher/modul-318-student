@@ -295,8 +295,8 @@
             this.map.LevelsKeepInMemmory = 5;
             this.map.Location = new System.Drawing.Point(11, 88);
             this.map.MarkersEnabled = true;
-            this.map.MaxZoom = 100;
-            this.map.MinZoom = 2;
+            this.map.MaxZoom = 20;
+            this.map.MinZoom = 7;
             this.map.MouseWheelZoomType = GMap.NET.MouseWheelZoomType.MousePositionAndCenter;
             this.map.Name = "map";
             this.map.NegativeMode = false;
@@ -308,7 +308,7 @@
             this.map.ShowTileGridLines = false;
             this.map.Size = new System.Drawing.Size(389, 157);
             this.map.TabIndex = 3;
-            this.map.Zoom = 6D;
+            this.map.Zoom = 7D;
             // 
             // SwissTransportGui
             // 

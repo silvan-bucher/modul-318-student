@@ -25,7 +25,7 @@ namespace SwissTransportGui
             InitializeComponent();
             resetConnectionTable();
             resetDepartureTable();
-            map.MapProvider = GMap.NET.MapProviders.GoogleMapProvider.Instance;
+            map.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
             GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
             map.Overlays.Add(markersOverlay);
             map.ShowCenter = false;
