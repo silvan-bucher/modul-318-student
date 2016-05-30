@@ -37,11 +37,11 @@
             this.textBoxFrom = new System.Windows.Forms.TextBox();
             this.labelFrom = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.labelStation = new System.Windows.Forms.Label();
-            this.textBoxStation = new System.Windows.Forms.TextBox();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.tableLayoutPanelDepartures = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxStation = new System.Windows.Forms.TextBox();
+            this.labelStation = new System.Windows.Forms.Label();
+            this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -91,7 +91,7 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 103F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 104F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -150,9 +150,38 @@
             this.tabPage2.Text = "Abfahrtsplan";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // printDialog1
+            // tableLayoutPanelDepartures
             // 
-            this.printDialog1.UseEXDialog = true;
+            this.tableLayoutPanelDepartures.AutoScroll = true;
+            this.tableLayoutPanelDepartures.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.tableLayoutPanelDepartures.ColumnCount = 3;
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
+            this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
+            this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
+            this.tableLayoutPanelDepartures.RowCount = 1;
+            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(389, 158);
+            this.tableLayoutPanelDepartures.TabIndex = 3;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.Location = new System.Drawing.Point(11, 46);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearch.TabIndex = 2;
+            this.buttonSearch.Text = "Suchen";
+            this.buttonSearch.UseVisualStyleBackColor = true;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxStation
+            // 
+            this.textBoxStation.Location = new System.Drawing.Point(54, 11);
+            this.textBoxStation.Name = "textBoxStation";
+            this.textBoxStation.Size = new System.Drawing.Size(346, 20);
+            this.textBoxStation.TabIndex = 1;
+            this.textBoxStation.TextChanged += new System.EventHandler(this.textBoxStation_TextChanged);
             // 
             // labelStation
             // 
@@ -163,36 +192,9 @@
             this.labelStation.TabIndex = 0;
             this.labelStation.Text = "Station";
             // 
-            // textBoxStation
+            // printDialog1
             // 
-            this.textBoxStation.Location = new System.Drawing.Point(54, 11);
-            this.textBoxStation.Name = "textBoxStation";
-            this.textBoxStation.Size = new System.Drawing.Size(346, 20);
-            this.textBoxStation.TabIndex = 1;
-            this.textBoxStation.TextChanged += new System.EventHandler(this.textBoxStation_TextChanged);
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.Location = new System.Drawing.Point(11, 46);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(389, 23);
-            this.buttonSearch.TabIndex = 2;
-            this.buttonSearch.Text = "Suchen";
-            this.buttonSearch.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanelDepartures
-            // 
-            this.tableLayoutPanelDepartures.ColumnCount = 3;
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
-            this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
-            this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
-            this.tableLayoutPanelDepartures.RowCount = 2;
-            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(389, 158);
-            this.tableLayoutPanelDepartures.TabIndex = 3;
+            this.printDialog1.UseEXDialog = true;
             // 
             // SwissTransportGui
             // 
