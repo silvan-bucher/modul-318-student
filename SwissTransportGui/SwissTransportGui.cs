@@ -46,6 +46,9 @@ namespace SwissTransportGui
 
             textBoxStation.AutoCompleteMode = AutoCompleteMode.Suggest;
             textBoxStation.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            textBoxStationSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
+            textBoxStationSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
         //Connection list logic
@@ -80,15 +83,15 @@ namespace SwissTransportGui
             {
                 //Duration
                 DateTime duration = dateFormatHelper.convertDuration(connection.Duration);
-                String durationText = dateFormatHelper.convertIntToTimeString(duration.Hour) + ":" + dateFormatHelper.convertIntToTimeString(duration.Minute);
+                String durationText = duration.ToString("HH:mm");
 
                 //Departure
                 DateTime departure = Convert.ToDateTime(connection.From.Departure.ToString());
-                String departureText = dateFormatHelper.convertIntToTimeString(departure.Hour) + ":" + dateFormatHelper.convertIntToTimeString(departure.Minute);
+                String departureText = departure.ToString("HH:mm");
 
                 //Arrival
                 DateTime arrival = Convert.ToDateTime(connection.To.Arrival.ToString());
-                String arrivalText = dateFormatHelper.convertIntToTimeString(arrival.Hour) + ":" + dateFormatHelper.convertIntToTimeString(arrival.Minute);
+                String arrivalText = departure.ToString("HH:mm");
 
                 //Platform
                 String platform = connection.From.Platform;
@@ -142,6 +145,15 @@ namespace SwissTransportGui
             }
         }
 
+        private void textBoxStationSearch_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxStationSearch.Text.Length > 2)
+            {
+                AutoCompleteStringCollection autocompleteList = searchStation(textBoxStationSearch.Text);
+                textBoxStationSearch.AutoCompleteCustomSource = autocompleteList;
+            }
+        }
+
         //Stationlist for autocomplete
         private AutoCompleteStringCollection searchStation(String query)
         {
@@ -178,12 +190,10 @@ namespace SwissTransportGui
             {
                 //Departure
                 DateTime departure = stationBoard.Stop.Departure;
-                String departureText = dateFormatHelper.convertIntToTimeString(departure.Hour) + ":" + dateFormatHelper.convertIntToTimeString(departure.Minute);
+                String departureText = departure.ToString("HH:mm");
 
                 //Destination
                 String destinationText = stationBoard.To;
-
-
 
                 //Platform
                 String category = stationBoard.Category;
@@ -225,7 +235,7 @@ namespace SwissTransportGui
             map.Position = new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate);
             markersOverlay.Markers.Remove(stationMarker);
             stationMarker = new GMarkerGoogle(new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate),
-            GMarkerGoogleType.red);
+            GMarkerGoogleType.red_dot);
             markersOverlay.Markers.Add(stationMarker);
         }
     }

@@ -47,11 +47,11 @@
             this.textBoxStation = new System.Windows.Forms.TextBox();
             this.labelStation = new System.Windows.Forms.Label();
             this.tabPageMap = new System.Windows.Forms.TabPage();
+            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.buttonSearchStation = new System.Windows.Forms.Button();
             this.textBoxStationSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.map = new GMap.NET.WindowsForms.GMapControl();
             this.tabControl1.SuspendLayout();
             this.tabPageConnections.SuspendLayout();
             this.tabPageDepartures.SuspendLayout();
@@ -142,7 +142,7 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
@@ -206,7 +206,7 @@
             this.tableLayoutPanelDepartures.ColumnCount = 3;
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
             this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
             this.tableLayoutPanelDepartures.RowCount = 1;
@@ -255,36 +255,6 @@
             this.tabPageMap.Text = "Karte";
             this.tabPageMap.UseVisualStyleBackColor = true;
             // 
-            // buttonSearchStation
-            // 
-            this.buttonSearchStation.Location = new System.Drawing.Point(11, 47);
-            this.buttonSearchStation.Name = "buttonSearchStation";
-            this.buttonSearchStation.Size = new System.Drawing.Size(389, 23);
-            this.buttonSearchStation.TabIndex = 2;
-            this.buttonSearchStation.Text = "Suchen";
-            this.buttonSearchStation.UseVisualStyleBackColor = true;
-            this.buttonSearchStation.Click += new System.EventHandler(this.buttonSearchStation_Click);
-            // 
-            // textBoxStationSearch
-            // 
-            this.textBoxStationSearch.Location = new System.Drawing.Point(52, 12);
-            this.textBoxStationSearch.Name = "textBoxStationSearch";
-            this.textBoxStationSearch.Size = new System.Drawing.Size(348, 20);
-            this.textBoxStationSearch.TabIndex = 1;
-            // 
-            // labelSearch
-            // 
-            this.labelSearch.AutoSize = true;
-            this.labelSearch.Location = new System.Drawing.Point(8, 15);
-            this.labelSearch.Name = "labelSearch";
-            this.labelSearch.Size = new System.Drawing.Size(40, 13);
-            this.labelSearch.TabIndex = 0;
-            this.labelSearch.Text = "Station";
-            // 
-            // printDialog1
-            // 
-            this.printDialog1.UseEXDialog = true;
-            // 
             // map
             // 
             this.map.Bearing = 0F;
@@ -309,6 +279,37 @@
             this.map.Size = new System.Drawing.Size(389, 157);
             this.map.TabIndex = 3;
             this.map.Zoom = 7D;
+            // 
+            // buttonSearchStation
+            // 
+            this.buttonSearchStation.Location = new System.Drawing.Point(11, 47);
+            this.buttonSearchStation.Name = "buttonSearchStation";
+            this.buttonSearchStation.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearchStation.TabIndex = 2;
+            this.buttonSearchStation.Text = "Suchen";
+            this.buttonSearchStation.UseVisualStyleBackColor = true;
+            this.buttonSearchStation.Click += new System.EventHandler(this.buttonSearchStation_Click);
+            // 
+            // textBoxStationSearch
+            // 
+            this.textBoxStationSearch.Location = new System.Drawing.Point(52, 12);
+            this.textBoxStationSearch.Name = "textBoxStationSearch";
+            this.textBoxStationSearch.Size = new System.Drawing.Size(348, 20);
+            this.textBoxStationSearch.TabIndex = 1;
+            this.textBoxStationSearch.TextChanged += new System.EventHandler(this.textBoxStationSearch_TextChanged);
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Location = new System.Drawing.Point(8, 15);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(40, 13);
+            this.labelSearch.TabIndex = 0;
+            this.labelSearch.Text = "Station";
+            // 
+            // printDialog1
+            // 
+            this.printDialog1.UseEXDialog = true;
             // 
             // SwissTransportGui
             // 

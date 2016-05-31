@@ -59,11 +59,8 @@ namespace SwissTransport
 
         public Connections GetConnections(string fromStation, string toStattion, DateTime time)
         {
-            DateFormatHelper formatHelper = new DateFormatHelper();
-            String timeString = formatHelper.convertIntToTimeString(time.Hour) + ":" + formatHelper.convertIntToTimeString(time.Minute);
-            String dateString = time.Year.ToString() + "-" + formatHelper.convertIntToTimeString(time.Month) + "-" + formatHelper.convertIntToTimeString(time.Day);
 
-            var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStattion + "&time=" + timeString + "&date=" + dateString);
+            var request = CreateWebRequest("http://transport.opendata.ch/v1/connections?from=" + fromStation + "&to=" + toStattion + "&time=" + time.ToString("HH:mm") + "&date=" + time.ToString("yyyy-MM-dd"));
             var response = request.GetResponse();
             var responseStream = response.GetResponseStream();
 
