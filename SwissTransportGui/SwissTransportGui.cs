@@ -105,10 +105,10 @@ namespace SwissTransportGui
                 String platform = connection.From.Platform;
 
                 //Adding values to table
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = departureText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 0, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = arrivalText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 1, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = durationText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 2, row);
-                tableLayoutPanelConnections.Controls.Add(new Label() { Text = platform, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 3, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = departureText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 0, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = arrivalText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 1, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = durationText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 2, row);
+                tableLayoutPanelConnections.Controls.Add(new Label() { Text = platform, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 3, row);
 
                 row++;
             }
@@ -119,10 +119,10 @@ namespace SwissTransportGui
             //Emptying table
             tableLayoutPanelConnections.Controls.Clear();
             //Recreating headers
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 0, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 1, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 2, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 3, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 0, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 1, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 2, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 3, 0);
         }
 
         //Autocomplete listeners for TextBox
@@ -214,9 +214,9 @@ namespace SwissTransportGui
                 String category = stationBoard.Category;
 
                 //Adding values to table
-                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = departureText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 0, row);
-                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = destinationText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 1, row);
-                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = category, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 2, row);
+                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = departureText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 0, row);
+                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = destinationText, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 1, row);
+                tableLayoutPanelDepartures.Controls.Add(new Label() { Text = category, AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None }, 2, row);
 
                 row++;
             }
@@ -227,9 +227,9 @@ namespace SwissTransportGui
             //Emptying table
             tableLayoutPanelDepartures.Controls.Clear();
             //Recreating headers
-            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 0, 0);
-            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Ziel", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 1, 0);
-            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Typ", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 130 }, 2, 0);
+            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right|AnchorStyles.Bottom|AnchorStyles.Left|AnchorStyles.Top }, 0, 0);
+            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Ziel", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 1, 0);
+            tableLayoutPanelDepartures.Controls.Add(new Label() { Text = "Typ", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Anchor = AnchorStyles.Right | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Top }, 2, 0);
         }
 
         private void buttonSearchStation_Click(object sender, EventArgs e)

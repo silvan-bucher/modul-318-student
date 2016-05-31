@@ -155,8 +155,9 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelConnections.Location = new System.Drawing.Point(8, 125);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
-            this.tableLayoutPanelConnections.RowCount = 1;
+            this.tableLayoutPanelConnections.RowCount = 2;
             this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelConnections.Size = new System.Drawing.Size(392, 120);
             this.tableLayoutPanelConnections.TabIndex = 8;
             // 
@@ -221,8 +222,9 @@
             this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(8, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
-            this.tableLayoutPanelDepartures.RowCount = 1;
+            this.tableLayoutPanelDepartures.RowCount = 2;
             this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(392, 158);
             this.tableLayoutPanelDepartures.TabIndex = 3;
             // 
