@@ -20,16 +20,13 @@ namespace SwissTransportGui
         DateFormatHelper dateFormatHelper;
         GMapOverlay markersOverlay = new GMapOverlay("markers");
         GMarkerGoogle stationMarker;
+
         public SwissTransportGui()
         {
             InitializeComponent();
             resetConnectionTable();
             resetDepartureTable();
-            map.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
-            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
-            map.Overlays.Add(markersOverlay);
-            map.ShowCenter = false;
-            map.Position = new PointLatLng(46.7976691, 8.2275602);
+            initializeMap();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -49,6 +46,16 @@ namespace SwissTransportGui
 
             textBoxStationSearch.AutoCompleteMode = AutoCompleteMode.Suggest;
             textBoxStationSearch.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        private void initializeMap()
+        {
+            //Setting initial map configs
+            map.MapProvider = GMap.NET.MapProviders.GoogleHybridMapProvider.Instance;
+            GMap.NET.GMaps.Instance.Mode = GMap.NET.AccessMode.ServerOnly;
+            map.Overlays.Add(markersOverlay);
+            map.ShowCenter = false;
+            map.Position = new PointLatLng(46.7976691, 8.2275602);
         }
 
         //Connection list logic
@@ -114,7 +121,7 @@ namespace SwissTransportGui
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Abfahrt", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 0, 0);
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Ankunft", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 1, 0);
             tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Dauer", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 2, 0);
-            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90}, 3, 0);
+            tableLayoutPanelConnections.Controls.Add(new Label() { Text = "Gleis", AutoSize = false, TextAlign = ContentAlignment.MiddleCenter, Dock = DockStyle.None, Width = 90 }, 3, 0);
         }
 
         //Autocomplete listeners for TextBox
@@ -159,7 +166,8 @@ namespace SwissTransportGui
         {
             List<Station> stations = transport.GetStations(query).StationList;
             AutoCompleteStringCollection autocompleteList = new AutoCompleteStringCollection();
-            foreach (Station station in stations){
+            foreach (Station station in stations)
+            {
                 autocompleteList.Add(station.Name);
             }
             return autocompleteList;
@@ -168,18 +176,24 @@ namespace SwissTransportGui
         //Departure list logic
         private void buttonSearchDepartures_Click(object sender, EventArgs e)
         {
+            //Reseting table
             resetDepartureTable();
+            //Getting station name from gui
+            String stationName = textBoxStation.Text;
 
-            List<Station> stations = transport.GetStations(textBoxStation.Text).StationList;
-            if(stations.Count < 1)
+            //Search station by name
+            List<Station> stations = transport.GetStations(stationName).StationList;
+            if (stations.Count < 1)
             {
                 return;
             }
-
             Station station = stations[0];
+
+            //Requesting station board for entered station
             StationBoardRoot stationBoardRoot = transport.GetStationBoard(station.Name, station.Id);
             List<StationBoard> stationBoards = stationBoardRoot.Entries;
 
+            //Filling up list with data from station board
             fillDepartureTable(stationBoards);
         }
 
@@ -219,24 +233,26 @@ namespace SwissTransportGui
 
         private void buttonSearchStation_Click(object sender, EventArgs e)
         {
+            //Getting station name from gui
             String stationName = textBoxStationSearch.Text;
-            Console.WriteLine(stationName);
 
+            //Searching station by name
             List<Station> stations = transport.GetStations(stationName).StationList;
             if (stations.Count < 1)
             {
-                Console.WriteLine("return");
                 return;
             }
-            Console.WriteLine("abc");
             Station station = stations[0];
 
-            map.Zoom = 15;
-            map.Position = new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate);
+            //Removing old marker
             markersOverlay.Markers.Remove(stationMarker);
+            //Adding new marker
             stationMarker = new GMarkerGoogle(new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate),
             GMarkerGoogleType.red_dot);
             markersOverlay.Markers.Add(stationMarker);
+            //Setting map position and zoom
+            map.Position = new PointLatLng(station.Coordinate.XCoordinate, station.Coordinate.YCoordinate);
+            map.Zoom = 15;
         }
     }
 }

@@ -259,7 +259,7 @@
             // 
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
-            this.map.EmptyTileColor = System.Drawing.Color.Navy;
+            this.map.EmptyTileColor = System.Drawing.Color.Transparent;
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
