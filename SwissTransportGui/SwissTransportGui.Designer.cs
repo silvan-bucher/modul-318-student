@@ -92,6 +92,7 @@
             // 
             // dateTimePickerTime
             // 
+            this.dateTimePickerTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerTime.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.dateTimePickerTime.Location = new System.Drawing.Point(246, 47);
             this.dateTimePickerTime.Name = "dateTimePickerTime";
@@ -101,6 +102,7 @@
             // 
             // dateTimePickerDate
             // 
+            this.dateTimePickerDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePickerDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePickerDate.Location = new System.Drawing.Point(247, 11);
             this.dateTimePickerDate.Name = "dateTimePickerDate";
@@ -109,6 +111,7 @@
             // 
             // labelTime
             // 
+            this.labelTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTime.AutoSize = true;
             this.labelTime.Location = new System.Drawing.Point(203, 49);
             this.labelTime.Name = "labelTime";
@@ -118,6 +121,7 @@
             // 
             // labelDate
             // 
+            this.labelDate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.labelDate.AutoSize = true;
             this.labelDate.Location = new System.Drawing.Point(203, 14);
             this.labelDate.Name = "labelDate";
@@ -127,9 +131,11 @@
             // 
             // buttonSearchConnections
             // 
-            this.buttonSearchConnections.Location = new System.Drawing.Point(11, 83);
+            this.buttonSearchConnections.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearchConnections.Location = new System.Drawing.Point(8, 83);
             this.buttonSearchConnections.Name = "buttonSearchConnections";
-            this.buttonSearchConnections.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearchConnections.Size = new System.Drawing.Size(394, 23);
             this.buttonSearchConnections.TabIndex = 9;
             this.buttonSearchConnections.Text = "Suchen";
             this.buttonSearchConnections.UseVisualStyleBackColor = true;
@@ -137,18 +143,21 @@
             // 
             // tableLayoutPanelConnections
             // 
+            this.tableLayoutPanelConnections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanelConnections.AutoScroll = true;
             this.tableLayoutPanelConnections.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelConnections.ColumnCount = 4;
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 98F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 97F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 94F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
-            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelConnections.Location = new System.Drawing.Point(11, 122);
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanelConnections.Location = new System.Drawing.Point(8, 125);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
             this.tableLayoutPanelConnections.RowCount = 1;
             this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelConnections.Size = new System.Drawing.Size(389, 121);
+            this.tableLayoutPanelConnections.Size = new System.Drawing.Size(392, 120);
             this.tableLayoutPanelConnections.TabIndex = 8;
             // 
             // textBoxTo
@@ -201,21 +210,26 @@
             // 
             // tableLayoutPanelDepartures
             // 
+            this.tableLayoutPanelDepartures.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelDepartures.AutoScroll = true;
             this.tableLayoutPanelDepartures.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelDepartures.ColumnCount = 3;
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 134F));
-            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 131F));
-            this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(11, 87);
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelDepartures.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanelDepartures.Location = new System.Drawing.Point(8, 87);
             this.tableLayoutPanelDepartures.Name = "tableLayoutPanelDepartures";
             this.tableLayoutPanelDepartures.RowCount = 1;
             this.tableLayoutPanelDepartures.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(389, 158);
+            this.tableLayoutPanelDepartures.Size = new System.Drawing.Size(392, 158);
             this.tableLayoutPanelDepartures.TabIndex = 3;
             // 
             // buttonSearch
             // 
+            this.buttonSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSearch.Location = new System.Drawing.Point(11, 46);
             this.buttonSearch.Name = "buttonSearch";
             this.buttonSearch.Size = new System.Drawing.Size(389, 23);
@@ -226,6 +240,8 @@
             // 
             // textBoxStation
             // 
+            this.textBoxStation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxStation.Location = new System.Drawing.Point(54, 11);
             this.textBoxStation.Name = "textBoxStation";
             this.textBoxStation.Size = new System.Drawing.Size(346, 20);
@@ -257,13 +273,16 @@
             // 
             // map
             // 
+            this.map.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.map.Bearing = 0F;
             this.map.CanDragMap = true;
             this.map.EmptyTileColor = System.Drawing.Color.Transparent;
             this.map.GrayScaleMode = false;
             this.map.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.map.LevelsKeepInMemmory = 5;
-            this.map.Location = new System.Drawing.Point(11, 88);
+            this.map.Location = new System.Drawing.Point(8, 88);
             this.map.MarkersEnabled = true;
             this.map.MaxZoom = 20;
             this.map.MinZoom = 7;
@@ -276,15 +295,17 @@
             this.map.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.map.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.map.ShowTileGridLines = false;
-            this.map.Size = new System.Drawing.Size(389, 157);
+            this.map.Size = new System.Drawing.Size(392, 157);
             this.map.TabIndex = 3;
             this.map.Zoom = 7D;
             // 
             // buttonSearchStation
             // 
-            this.buttonSearchStation.Location = new System.Drawing.Point(11, 47);
+            this.buttonSearchStation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSearchStation.Location = new System.Drawing.Point(8, 47);
             this.buttonSearchStation.Name = "buttonSearchStation";
-            this.buttonSearchStation.Size = new System.Drawing.Size(389, 23);
+            this.buttonSearchStation.Size = new System.Drawing.Size(392, 23);
             this.buttonSearchStation.TabIndex = 2;
             this.buttonSearchStation.Text = "Suchen";
             this.buttonSearchStation.UseVisualStyleBackColor = true;
@@ -292,6 +313,8 @@
             // 
             // textBoxStationSearch
             // 
+            this.textBoxStationSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxStationSearch.Location = new System.Drawing.Point(52, 12);
             this.textBoxStationSearch.Name = "textBoxStationSearch";
             this.textBoxStationSearch.Size = new System.Drawing.Size(348, 20);
@@ -317,12 +340,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 279);
             this.Controls.Add(this.tabControl1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(424, 306);
             this.Name = "SwissTransportGui";
             this.Text = "SwissTransport";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.SwissTransportGui_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageConnections.ResumeLayout(false);
             this.tabPageConnections.PerformLayout();
