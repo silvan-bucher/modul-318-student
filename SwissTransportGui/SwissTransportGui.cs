@@ -261,50 +261,8 @@ namespace SwissTransportGui
 
         private void buttonShare_Click(object sender, EventArgs e)
         {
-            MailAddress fromAddress = new MailAddress("swisstransport318@gmail.com", "Swiss Transport");
-            MailAddress toAddress = new MailAddress("silvan.bucher99@gmail.com");
-            String fromPassword = "hey123abc";
-            String subject = "Test";
-            String body = "<h1>Swiss Transport</h1>" + getHtmlTableCodeConnections() + "<p>Greeting, Swiss Transport</p>";
-
-
-            SmtpClient smtp = new SmtpClient
-            {
-                Host = "smtp.gmail.com",
-                Port = 587,
-                EnableSsl = true,
-                DeliveryMethod = SmtpDeliveryMethod.Network,
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
-            };
-            using (MailMessage message = new MailMessage(fromAddress, toAddress)
-            {
-                Subject = subject,
-                Body = body,
-                IsBodyHtml = true
-            })
-            {
-                smtp.Send(message);
-            }
-        }
-        private String getHtmlTableCodeConnections()
-        {
-            String table = "";
-            int currentRow = 0;
-            foreach (Control c in tableLayoutPanelConnections.Controls)
-            {
-                if (currentRow != this.tableLayoutPanelConnections.GetRow(c))
-                {
-                    currentRow = this.tableLayoutPanelConnections.GetRow(c);
-                    table += "</tr>";
-                    table += "<tr>";
-                    table += "<td>" + c.Text + "</td>";
-                    continue;
-                }
-                table += "<td>" + c.Text + "</td>";
-            }
-            table = "<table border=\"1\"><tr>" + table + "</tr></table>";
-            return table;
+            SendMail sendMail = new SendMail(tableLayoutPanelConnections, textBoxFrom.Text, textBoxTo.Text);
+            sendMail.ShowDialog();
         }
     }
 }
