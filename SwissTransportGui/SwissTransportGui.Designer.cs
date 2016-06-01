@@ -52,6 +52,7 @@
             this.textBoxStationSearch = new System.Windows.Forms.TextBox();
             this.labelSearch = new System.Windows.Forms.Label();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
+            this.buttonShare = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageConnections.SuspendLayout();
             this.tabPageDepartures.SuspendLayout();
@@ -72,6 +73,7 @@
             // 
             // tabPageConnections
             // 
+            this.tabPageConnections.Controls.Add(this.buttonShare);
             this.tabPageConnections.Controls.Add(this.dateTimePickerTime);
             this.tabPageConnections.Controls.Add(this.dateTimePickerDate);
             this.tabPageConnections.Controls.Add(this.labelTime);
@@ -153,12 +155,12 @@
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanelConnections.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanelConnections.Location = new System.Drawing.Point(8, 125);
+            this.tableLayoutPanelConnections.Location = new System.Drawing.Point(8, 141);
             this.tableLayoutPanelConnections.Name = "tableLayoutPanelConnections";
             this.tableLayoutPanelConnections.RowCount = 2;
             this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanelConnections.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelConnections.Size = new System.Drawing.Size(392, 120);
+            this.tableLayoutPanelConnections.Size = new System.Drawing.Size(392, 104);
             this.tableLayoutPanelConnections.TabIndex = 8;
             // 
             // textBoxTo
@@ -336,6 +338,16 @@
             // 
             this.printDialog1.UseEXDialog = true;
             // 
+            // buttonShare
+            // 
+            this.buttonShare.Location = new System.Drawing.Point(8, 112);
+            this.buttonShare.Name = "buttonShare";
+            this.buttonShare.Size = new System.Drawing.Size(71, 23);
+            this.buttonShare.TabIndex = 14;
+            this.buttonShare.Text = "Share";
+            this.buttonShare.UseVisualStyleBackColor = true;
+            this.buttonShare.Click += new System.EventHandler(this.buttonShare_Click);
+            // 
             // SwissTransportGui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +395,7 @@
         private System.Windows.Forms.Label labelSearch;
         private System.Windows.Forms.Button buttonSearchStation;
         private GMap.NET.WindowsForms.GMapControl map;
+        private System.Windows.Forms.Button buttonShare;
     }
 }
 
